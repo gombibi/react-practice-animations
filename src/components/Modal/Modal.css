@@ -1,0 +1,91 @@
+.Modal {
+  position: fixed;
+  z-index: 200;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  transition: all 0.3s ease-out;
+}
+
+.ModalOpen {
+  /* display: block; */
+  /* opacity: 1;
+  transform: translateY(0); */
+
+  /* keyframes 사용 */
+  animation: openModal 0.4s ease-out forwards;
+}
+
+.ModalClosed {
+  /* display: none; ===> display 속성 -> 어떤 애니메이션도 전환 시에 발생하지 못함... css가 애니메이션을 적용해야된다는 것을 인식하지 못하기 때문*/
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.ModalOpen {
+  /* display: block; */
+  /* opacity: 1;
+  transform: translateY(0); */
+
+  /* keyframes 사용 */
+  animation: openModal 0.4s ease-out forwards;
+}
+
+.ModalClosed {
+  /* display: none; ===> display 속성 -> 어떤 애니메이션도 전환 시에 발생하지 못함... css가 애니메이션을 적용해야된다는 것을 인식하지 못하기 때문*/
+  /* opacity: 0;
+  transform: translateY(-100%); */
+
+  /* keyframes 사용 */
+  animation: closeModal 1s ease-out forwards;
+}
+
+.fade-slide-enter {
+}
+
+.fade-slide-enter-active {
+  animation: openModal 0.4s ease-out forwards;
+}
+
+.fade-slide-exit {
+}
+
+.fade-slide-exit-active {
+  animation: closeModal 1s ease-out forwards;
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeModal {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
